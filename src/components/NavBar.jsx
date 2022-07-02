@@ -10,13 +10,13 @@ export default function Example() {
   return (
     <Disclosure
       as="nav"
-      className="sticky top-0 z-10 bg-gray-100 backdrop-filter backdrop-blur-lg bg-opacity-30 shadow"
+      className="sticky top-0 z-10 bg-gray-100 bg-opacity-30 shadow backdrop-blur-lg backdrop-filter"
     >
       {({ open }) => (
         <>
-          <div className="container flex items-center justify-center mx-auto py-2 mt-1 px-2 sm:px-6 lg:px-8">
+          <div className="container mx-auto mt-1 flex items-center justify-center py-2 px-2 sm:px-6 lg:px-8">
             <img
-              className="block w-52 mb-1 mr-2 py-2 my-auto"
+              className="my-auto mb-1 mr-2 block w-52 py-2"
               src="/img/grammarify-blue.svg"
               alt="grammarify-logo"
             />
