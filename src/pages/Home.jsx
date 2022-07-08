@@ -1,6 +1,12 @@
 import React, { useState } from "react";
 import logo from "/img/main-illustration.png";
-import axios from "axios";
+import { Button, Header, Typography } from "@cred/neopop-web/lib/components";
+import {
+  FontVariant,
+  colorPalette,
+  colorGuide,
+  mainColors,
+} from "@cred/neopop-web/lib/primitives";
 
 function Home() {
   const api_url = "http://localhost:8000/grammar-correct?incorrect_sentence=";
@@ -22,26 +28,21 @@ function Home() {
   };
 
   return (
-    <div className="bg-gray-50 h-screen lg:p-10">
+    <div className="h-screen bg-gray-900 lg:p-10">
       <div className="container m-auto grid grid-cols-1 gap-10 text-center md:grid-cols-2">
-        <div className="">
-          <img src={logo} alt="an-illustration" />
-        </div>
-
         <div className="mt-6 lg:mt-16">
           <h1 class="text-xl font-extrabold tracking-tight text-gray-900 sm:text-5xl md:text-5xl lg:text-left">
-            <span class="block xl:inline">
+            <span class="block text-gray-50 xl:inline">
               Correct your grammar mistakes and{" "}
             </span>
-            <span class="block text-main-pink xl:inline">
+            <span class="text-main-pink block xl:inline">
               sound professional
             </span>
           </h1>
-          <p class="mt-3 text-sm text-gray-500 sm:mx-auto sm:mt-5 sm:max-w-xl sm:text-md md:mt-5 md:text-lg lg:mx-0 lg:text-left">
+          <p class="sm:text-md mt-3 text-sm text-gray-400 sm:mx-auto sm:mt-5 sm:max-w-xl md:mt-5 md:text-lg lg:mx-0 lg:text-left">
             Check for spelling errors, grammatical errors and convert your
             informal speech to formal speech.
           </p>
-
           <div className="flex-col lg:justify-start lg:gap-8">
             <form
               onSubmit={handleSubmit}
@@ -61,6 +62,28 @@ function Home() {
                 <button className="w-40 rounded-md bg-purple-500 px-4 py-3 font-semibold text-white hover:bg-green-400">
                   Sound Formal
                 </button>
+                <Button
+                  colorConfig={{
+                    backgroundColor: "transparent",
+                    borderColor: "white",
+                    color: "white",
+                    edgeColors: {
+                      bottom: "#F68A",
+                      left: "transparent",
+                      right: "#F68ABE",
+                      top: "transparent",
+                    },
+                  }}
+                  variant="primary"
+                  kind="elevated"
+                  size="big"
+                  colorMode="light"
+                  onClick={() => {
+                    console.log("I'm clicked");
+                  }}
+                >
+                  Correct
+                </Button>
               </div>
             </form>
 
