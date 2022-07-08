@@ -1,12 +1,5 @@
 import React, { useState } from "react";
-import logo from "/img/main-illustration.png";
-import { Button, Header, Typography } from "@cred/neopop-web/lib/components";
-import {
-  FontVariant,
-  colorPalette,
-  colorGuide,
-  mainColors,
-} from "@cred/neopop-web/lib/primitives";
+import { Button, InputField } from "@cred/neopop-web/lib/components";
 
 function Home() {
   const api_url = "http://localhost:8000/grammar-correct?incorrect_sentence=";
@@ -28,8 +21,8 @@ function Home() {
   };
 
   return (
-    <div className="h-screen bg-gray-900 lg:p-10">
-      <div className="container m-auto grid grid-cols-1 gap-10 text-center md:grid-cols-2">
+    <div className="h-screen bg-slate-900 lg:p-10">
+      <div className="container m-auto grid grid-cols-2 gap-10 text-center md:grid-cols-2">
         <div className="mt-6 lg:mt-16">
           <h1 class="text-xl font-extrabold tracking-tight text-gray-900 sm:text-5xl md:text-5xl lg:text-left">
             <span class="block text-gray-50 xl:inline">
@@ -55,6 +48,30 @@ function Home() {
                 placeholder="Here's where you can fix your mistakes."
                 className="h-24 w-full rounded-lg border px-4"
               />
+              <div
+                style={{
+                  background: "white",
+                  padding: "30px",
+                }}
+              >
+                <InputField
+                  autoFocus
+                  colorConfig={{
+                    labelColor: "#0d0d0d",
+                    textColor: "#000000",
+                  }}
+                  colorMode="light"
+                  id="text_field"
+                  inputMode="text"
+                  label="sentence"
+                  maxLength={30}
+                  onBlur={function noRefCheck() {}}
+                  onChange={function noRefCheck() {}}
+                  onFocus={function noRefCheck() {}}
+                  placeholder="enter the sentence"
+                  type="text"
+                />
+              </div>
               <div className="flex gap-6">
                 <button className="w-44 rounded-md bg-green-400 px-6 py-2 font-semibold text-white hover:bg-purple-500">
                   Correct Grammar
@@ -92,6 +109,7 @@ function Home() {
             </div>
           </div>
         </div>
+        <img src="public/img/illustration.png" alt="" />
       </div>
     </div>
   );
