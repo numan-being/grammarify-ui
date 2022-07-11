@@ -156,7 +156,11 @@ function Home() {
             </form>
           </div>
         </div>
-        <img src="/img/illustration.png" alt="man-illustration" />
+        <img
+          className="mt-8 ml-20"
+          src="/img/illustration.png"
+          alt="man-illustration"
+        />
       </div>
     </div>
   );
